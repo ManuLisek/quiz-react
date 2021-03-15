@@ -10,7 +10,7 @@ const PresidentsLists = () => {
   ))
 
   return (
-    <div>
+    <div className='presidents-list'>
       <table>
         <thead>
          <tr>
