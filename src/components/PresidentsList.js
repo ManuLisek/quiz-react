@@ -2,12 +2,12 @@ import President from './President'
 import {presidents} from '../data/dataPresidents'
 
 
-const PresidentsLists = () => {
-
-  const presidentsList = presidents.map((president, index) => (
-    <President key={index} president={president} />
-    
-  ))
+const PresidentsLists = (props) => {
+    const {isPresidentVisible} = props
+    const presidentsList = presidents.map((president, index) => (
+        <President key={index} president={president} isPresidentVisible={isPresidentVisible}/>
+        
+    ))
 
   return (
     <div className='presidents-list'>
