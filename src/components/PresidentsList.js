@@ -1,5 +1,6 @@
-import President from './President'
-import {presidents} from '../data/dataPresidents'
+import President from './President';
+import {presidents} from '../data/dataPresidents';
+import PropTypes from 'prop-types';
 
 
 const PresidentsLists = (props) => {
@@ -25,5 +26,9 @@ const PresidentsLists = (props) => {
     </div>
   )
 }
+
+PresidentsLists.propTypes = {
+    isPresidentVisible: PropTypes.bool,
+  }
 
 export default PresidentsLists;
