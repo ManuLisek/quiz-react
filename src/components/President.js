@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const President = (props) => {
 
   const {name, lastName, termOfOffice, isPresidentVisible} = props.president
-  //console.log(props.president)
+
   return (
     
     <tr>
