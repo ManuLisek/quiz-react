@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PresidentsList from './PresidentsList';
 import AddPresident from './AddPresident';
+import StartGame from './StartGame';
 import {presidents} from '../data/dataPresidents';
 import './App.scss';
 
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <AddPresident change={this.handleChangeInput} />
+        <StartGame />
         <PresidentsList isPresidentVisible={isPresidentVisible} />
       </div>
     );
