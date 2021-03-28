@@ -11,6 +11,8 @@ class App extends Component {
         super(props);
         this.state = {
             isPresidentVisible: false,
+            minutes: 2,
+            seconds: 0,
         }
     }
 
@@ -28,14 +30,35 @@ class App extends Component {
         }
       }
     
+    handleClick = () => {
+        this.interval = setInterval(() => {
+          const {seconds, minutes} = this.state
+          if(seconds > 0){
+          this.setState(({seconds}) => ({
+            seconds: seconds - 1
+          }))
+          }
+          if(seconds === 0){
+            if(minutes === 0){
+                clearInterval(this.interval)
+            } else{
+              this.setState(({minutes}) => ({
+                minutes: minutes - 1,
+                seconds: 59
+              }))
+            }
+          }
+        },1000)
+      }
+    
   render(){
-    const {isPresidentVisible} = this.state;
+    const {isPresidentVisible, minutes, seconds} = this.state;
     return (
       <div className="App">
         <AddPresident change={this.handleChangeInput} />
-        <StartGame />
+        <StartGame clickStart={this.handleClick}/>
         <PresidentsList isPresidentVisible={isPresidentVisible} />
-        <Clock />
+        <Clock minutes={minutes} seconds={seconds}/>
       </div>
     );
   }
