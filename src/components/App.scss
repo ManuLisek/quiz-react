@@ -1,3 +1,9 @@
+$font-details-color: #34495e;
+$background-color-light: #dff9fb;
+$background-color-dark: #130f40;
+$radius: 8px;
+$transition: 0.2s;
+
 /*Global*/
 
 * {
@@ -18,17 +24,42 @@ input {
 }
 
 /*PresidentsList*/
-
 table {
   text-align: center;
-  border: 1px solid black;
-  width: 400px;
-  margin: 0 auto;
+  font-family: "Muli", Sans-Serif;
+  font-size: 16px;
+  border: 3px solid $font-details-color;
+  min-width: 300px;
+  width: 50vw;
+  min-height: 200px;
+  height: 45vh;
+  margin: 25px auto;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: 5px 3px $font-details-color;
+  border-collapse: collapse;
+  color: $background-color-light;
+}
+
+tr {
+  background-color: $background-color-dark;
+}
+
+th {
+  background-color: $font-details-color;
+  padding: 5px 0;
+  text-transform: uppercase;
 }
 
 /*President*/
 .hiddenPresident {
   opacity: 0;
+}
+
+td {
+  opacity: 1;
+  letter-spacing: 0.5px;
+  transition: $transition;
 }
 
 /*StartGame*/
