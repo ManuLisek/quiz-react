@@ -3,6 +3,7 @@ import PresidentsList from './PresidentsList';
 import AddPresident from './AddPresident';
 import StartGame from './StartGame';
 import Clock from './Clock';
+import Result from './Result';
 import {presidents} from '../data/dataPresidents';
 import './App.scss';
 
@@ -13,6 +14,7 @@ class App extends Component {
             isPresidentVisible: false,
             minutes: 2,
             seconds: 0,
+            result: 0,
         }
     }
 
@@ -24,7 +26,7 @@ class App extends Component {
           const isPresidentVisible = presidents[index].isPresidentVisible;
           this.setState(({result}) => ({
             isPresidentVisible,
-            
+            result: result + 1
           }))
           e.target.value = '';
         }
@@ -52,13 +54,14 @@ class App extends Component {
       }
     
   render(){
-    const {isPresidentVisible, minutes, seconds} = this.state;
+    const {isPresidentVisible, minutes, seconds, result} = this.state;
     return (
       <div className="App">
         <AddPresident change={this.handleChangeInput} />
         <StartGame clickStart={this.handleClick}/>
         <PresidentsList isPresidentVisible={isPresidentVisible} />
         <Clock minutes={minutes} seconds={seconds}/>
+        <Result result={result}/>
       </div>
     );
   }
