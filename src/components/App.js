@@ -15,6 +15,7 @@ class App extends Component {
             minutes: 2,
             seconds: 0,
             result: 0,
+            isInputDisabled: true,
         }
     }
 
@@ -33,6 +34,9 @@ class App extends Component {
       }
     
     handleClick = () => {
+        this.setState({
+            isInputDisabled: false,
+          })
         this.interval = setInterval(() => {
           const {seconds, minutes} = this.state
           if(seconds > 0){
@@ -55,13 +59,16 @@ class App extends Component {
 
       handleEndGame = () => {
         clearInterval(this.interval)
+        this.setState({
+            isInputDisabled: true,
+        })
       }
     
   render(){
-    const {isPresidentVisible, minutes, seconds, result} = this.state;
+    const {isPresidentVisible, minutes, seconds, result, isInputDisabled} = this.state;
     return (
       <div className="App">
-        <AddPresident change={this.handleChangeInput} />
+        <AddPresident change={this.handleChangeInput} isInputDisabled={isInputDisabled}/>
         <StartGame clickStart={this.handleClick}/>
         <PresidentsList isPresidentVisible={isPresidentVisible} />
         <Clock minutes={minutes} seconds={seconds}/>
