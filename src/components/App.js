@@ -42,7 +42,7 @@ class App extends Component {
           }
           if(seconds === 0){
             if(minutes === 0){
-                clearInterval(this.interval)
+                this.handleEndGame();
             } else{
               this.setState(({minutes}) => ({
                 minutes: minutes - 1,
@@ -51,6 +51,10 @@ class App extends Component {
             }
           }
         },1000)
+      }
+
+      handleEndGame = () => {
+        clearInterval(this.interval)
       }
     
   render(){
