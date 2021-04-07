@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import PresidentsList from './PresidentsList';
 import AddPresident from './AddPresident';
 import StartGame from './StartGame';
-import Clock from './Clock';
 import Result from './Result';
+import GiveUp from './GiveUp';
 import {presidents} from '../data/dataPresidents';
 import './App.scss';
 
@@ -16,6 +16,8 @@ class App extends Component {
             seconds: 0,
             result: 0,
             isInputDisabled: true,
+            isQuizRunning: false,
+            isGiveUpVisible: false,
         }
     }
 
@@ -36,6 +38,8 @@ class App extends Component {
     handleClick = () => {
         this.setState({
             isInputDisabled: false,
+            isQuizRunning: true,
+            isGiveUpVisible: true,
           })
         this.interval = setInterval(() => {
           const {seconds, minutes} = this.state
@@ -61,17 +65,28 @@ class App extends Component {
         clearInterval(this.interval)
         this.setState({
             isInputDisabled: true,
+            isGiveUpVisible: false,
         })
       }
+
+
     
   render(){
-    const {isPresidentVisible, minutes, seconds, result, isInputDisabled} = this.state;
+    const {isPresidentVisible, minutes, seconds, result, isInputDisabled, isQuizRunning, isGiveUpVisible} = this.state;
     return (
       <div className="App">
         <AddPresident change={this.handleChangeInput} isInputDisabled={isInputDisabled}/>
-        <StartGame clickStart={this.handleClick}/>
+        {isQuizRunning
+        ? <GiveUp 
+            clickEnd={this.handleEndGame} 
+            isGiveUpVisible={isGiveUpVisible} 
+            minutes={minutes} 
+            seconds={seconds} 
+          />
+        : <StartGame 
+            clickStart={this.handleClick}
+          />}
         <PresidentsList isPresidentVisible={isPresidentVisible} />
-        <Clock minutes={minutes} seconds={seconds}/>
         <Result result={result}/>
       </div>
     );
