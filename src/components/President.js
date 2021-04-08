@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 const President = (props) => {
 
-  const {name, lastName, termOfOffice, isPresidentVisible} = props.president
+  const {name, lastName, termOfOffice, isPresidentVisible, isPresidentGuessed} = props.president
 
   return (
     
     <tr>
-      <td className={`${isPresidentVisible ? "" : " hiddenPresident"}`}>{name} {lastName}</td>
+      <td className={`${isPresidentGuessed ? " guessedPresident" : ""} ${isPresidentVisible ? "" : " hiddenPresident"}`}>{name} {lastName}</td>
       <td>{termOfOffice}</td>
     </tr>
 )
@@ -16,6 +16,7 @@ const President = (props) => {
 
 President.propTypes = {
     isPresidentVisible: PropTypes.bool,
+    isPresidentGuessed: PropTypes.bool,
   }
 
 export default President;

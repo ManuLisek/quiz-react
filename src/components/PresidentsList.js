@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 
 const PresidentsLists = (props) => {
-    const {isPresidentVisible} = props
+    const {isPresidentVisible, isPresidentGuessed} = props
     const presidentsList = presidents.map((president, index) => (
-        <President key={index} president={president} isPresidentVisible={isPresidentVisible}/>
+        <President key={index} president={president} isPresidentVisible={isPresidentVisible} isPresidentGuessed={isPresidentGuessed}/>
         
     ))
 
@@ -29,6 +29,7 @@ const PresidentsLists = (props) => {
 
 PresidentsLists.propTypes = {
     isPresidentVisible: PropTypes.bool,
+    isPresidentGuessed: PropTypes.bool,
   }
 
 export default PresidentsLists;

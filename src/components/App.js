@@ -18,6 +18,7 @@ class App extends Component {
             isInputDisabled: true,
             isQuizRunning: false,
             isGiveUpVisible: false,
+            isPresidentGuessed: false,
         }
     }
 
@@ -27,8 +28,11 @@ class App extends Component {
         if(index !== -1){
           presidents[index].isPresidentVisible = true;
           const isPresidentVisible = presidents[index].isPresidentVisible;
+          presidents[index].isPresidentGuessed = true;
+          const isPresidentGuessed = presidents[index].isPresidentGuessed;
           this.setState(({result}) => ({
             isPresidentVisible,
+            isPresidentGuessed,
             result: result + 1
           }))
           e.target.value = '';
@@ -78,10 +82,14 @@ class App extends Component {
         }
       }
 
+      componentWillUnmount(){
+        clearInterval(this.interval)
+      }
+
 
     
   render(){
-    const {isPresidentVisible, minutes, seconds, result, isInputDisabled, isQuizRunning, isGiveUpVisible} = this.state;
+    const {isPresidentVisible, minutes, seconds, result, isInputDisabled, isQuizRunning, isGiveUpVisible, isPresidentGuessed} = this.state;
     return (
       <div className="App">
         <AddPresident change={this.handleChangeInput} isInputDisabled={isInputDisabled}/>
@@ -95,7 +103,7 @@ class App extends Component {
         : <StartGame 
             clickStart={this.handleClick}
           />}
-        <PresidentsList isPresidentVisible={isPresidentVisible} />
+        <PresidentsList isPresidentVisible={isPresidentVisible} isPresidentGuessed={isPresidentGuessed}/>
         <Result result={result}/>
       </div>
     );
