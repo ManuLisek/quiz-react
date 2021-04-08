@@ -69,6 +69,15 @@ class App extends Component {
         })
       }
 
+      componentDidUpdate(prevProps, prevState){
+        const {result} = this.state
+        if(prevState.result !== result){
+          if(result === presidents.length){
+            this.handleEndGame();
+          }
+        }
+      }
+
 
     
   render(){
