@@ -7,7 +7,7 @@ const GiveUp = (props) => {
     return (
       <div className="end">
         <Clock minutes={minutes} seconds={seconds}/>
-        <button className={`btn-end ${isGiveUpVisible ? "" : "hiddenGiveUp"}`} onClick={clickEnd}>Poddaję się</button>
+        <button className={`btn btn-end ${isGiveUpVisible ? "" : "hiddenGiveUp"}`} onClick={clickEnd}>Poddaję się</button>
       </div>
     );
   

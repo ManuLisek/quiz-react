@@ -8,7 +8,7 @@ const StartGame = (props) => {
     return (
       <div className="start">
         <h2>Kliknik guzik aby rozpocząć quiz!</h2>
-        <button className="btn-start" onClick={clickStart}>Start</button>
+        <button className="btn btn-start" onClick={clickStart}>Start</button>
       </div>
     );
   

@@ -1,6 +1,8 @@
 $font-details-color: #34495e;
-$background-color-light: #dff9fb;
+$font-color-light: #dff9fb;
 $background-color-dark: #130f40;
+$color-success: #6ab04c;
+$color-warning: #e74c3c;
 $radius: 8px;
 $transition: 0.2s;
 
@@ -16,6 +18,17 @@ body {
   height: 100%;
   position: relative;
   text-align: center;
+}
+
+.btn {
+  text-transform: uppercase;
+  background: white;
+  padding: 10px;
+  border-radius: $radius;
+  display: inline-block;
+  transition: $transition;
+  width: 125px;
+  margin: 10px 0;
 }
 
 /*AddPresident*/
@@ -38,7 +51,7 @@ table {
   overflow: hidden;
   box-shadow: 5px 3px $font-details-color;
   border-collapse: collapse;
-  color: $background-color-light;
+  color: $font-color-light;
 }
 
 tr {
@@ -68,9 +81,16 @@ td {
 
 /*StartGame*/
 .btn-start {
-  font-size: 20px;
-  margin: 10px auto;
-  padding: 5px 10px;
+  color: $color-success;
+  border: 4px solid $color-success;
+  box-shadow: 2px 1px #535c68;
+}
+
+.btn-start:hover {
+  background-color: $color-success;
+  color: $font-color-light;
+  transition: $transition;
+  cursor: pointer;
 }
 
 /*Clock*/
@@ -90,9 +110,16 @@ td {
 
 /*GiveUp*/
 .btn-end {
-  font-size: 20px;
-  margin: 10px auto;
-  padding: 5px 10px;
+  color: $color-warning;
+  border: 4px solid $color-warning;
+  box-shadow: 2px 1px #535c68;
+}
+
+.btn-end:hover {
+  color: $font-color-light;
+  background-color: $color-warning;
+  transition: $transition;
+  cursor: pointer;
 }
 
 .hiddenGiveUp {
