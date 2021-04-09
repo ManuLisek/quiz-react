@@ -15,7 +15,7 @@ const President = (props) => {
 }
 
 President.propTypes = {
-    isPresidentVisible: PropTypes.bool,
+    isPresidentVisible: PropTypes.any,
     isPresidentGuessed: PropTypes.bool,
   }
 

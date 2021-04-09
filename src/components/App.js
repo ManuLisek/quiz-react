@@ -67,7 +67,9 @@ class App extends Component {
 
       handleEndGame = () => {
         clearInterval(this.interval)
-        this.setState({
+        const isPresidentVisible = presidents.map(president => president.isPresidentVisible = true)
+          this.setState({
+            isPresidentVisible,
             isInputDisabled: true,
             isGiveUpVisible: false,
         })
