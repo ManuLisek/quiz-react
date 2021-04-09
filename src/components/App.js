@@ -71,13 +71,12 @@ class App extends Component {
             isInputDisabled: true,
             isGiveUpVisible: false,
         })
-        presidents.map((president) => {
+        presidents.forEach((president) => {
             president.isPresidentVisible = true;
             const isPresidentVisible = president.isPresidentVisible;
             this.setState({
                 isPresidentVisible,
             })
-            return null;
         }
         ) 
       }
