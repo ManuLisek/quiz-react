@@ -12,13 +12,14 @@ class App extends Component {
         super(props);
         this.state = {
             isPresidentVisible: false,
-            minutes: 2,
-            seconds: 0,
+            minutes: 0,
+            seconds: 20,
             result: 0,
             isInputDisabled: true,
             isQuizRunning: false,
             isGiveUpVisible: false,
             isPresidentGuessed: false,
+            lastSeconds: false,
         }
     }
 
@@ -82,10 +83,19 @@ class App extends Component {
       }
 
       componentDidUpdate(prevProps, prevState){
-        const {result} = this.state
+        const {result, seconds, minutes} = this.state
         if(prevState.result !== result){
           if(result === presidents.length){
             this.handleEndGame();
+          }
+        }
+        if(prevState.seconds !== seconds){
+          if(minutes === 0){
+            if(seconds <= 10){
+              this.setState({
+                lastSeconds: true,
+              })
+            }
           }
         }
       }
@@ -97,7 +107,7 @@ class App extends Component {
 
     
   render(){
-    const {isPresidentVisible, minutes, seconds, result, isInputDisabled, isQuizRunning, isGiveUpVisible, isPresidentGuessed} = this.state;
+    const {isPresidentVisible, minutes, seconds, result, isInputDisabled, isQuizRunning, isGiveUpVisible, isPresidentGuessed, lastSeconds} = this.state;
     return (
       <div className="App">
         <AddPresident change={this.handleChangeInput} isInputDisabled={isInputDisabled}/>
@@ -107,6 +117,7 @@ class App extends Component {
             isGiveUpVisible={isGiveUpVisible} 
             minutes={minutes} 
             seconds={seconds} 
+            lastSeconds={lastSeconds}
           />
         : <StartGame 
             clickStart={this.handleClick}
