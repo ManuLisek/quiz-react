@@ -4,6 +4,7 @@ import AddPresident from './AddPresident';
 import StartGame from './StartGame';
 import Result from './Result';
 import GiveUp from './GiveUp';
+import Footer from './Footer';
 import {presidents} from '../data/dataPresidents';
 import './App.scss';
 
@@ -110,7 +111,10 @@ class App extends Component {
     const {isPresidentVisible, minutes, seconds, result, isInputDisabled, isQuizRunning, isGiveUpVisible, isPresidentGuessed, lastSeconds} = this.state;
     return (
       <div className="App">
-        <AddPresident change={this.handleChangeInput} isInputDisabled={isInputDisabled}/>
+        <AddPresident 
+            change={this.handleChangeInput} 
+            isInputDisabled={isInputDisabled}
+        />
         {isQuizRunning
         ? <GiveUp 
             clickEnd={this.handleEndGame} 
@@ -122,8 +126,14 @@ class App extends Component {
         : <StartGame 
             clickStart={this.handleClick}
           />}
-        <PresidentsList isPresidentVisible={isPresidentVisible} isPresidentGuessed={isPresidentGuessed}/>
-        <Result result={result}/>
+        <PresidentsList 
+            isPresidentVisible={isPresidentVisible} 
+            isPresidentGuessed={isPresidentGuessed}
+        />
+        <Result 
+            result={result}
+        />
+        <Footer />
       </div>
     );
   }

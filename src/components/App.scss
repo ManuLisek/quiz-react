@@ -1,6 +1,7 @@
 $font-details-color: #34495e;
 $font-color-light: #dff9fb;
 $background-color-dark: #130f40;
+$background-color-light: #dff9fb;
 $color-success: #6ab04c;
 $color-warning: #e74c3c;
 $radius: 8px;
@@ -14,9 +15,15 @@ $transition: 0.2s;
   box-sizing: border-box;
 }
 
-body {
+html {
   height: 100%;
+}
+
+body {
+  background-color: $background-color-light;
+  min-height: 100%;
   position: relative;
+  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -124,4 +131,22 @@ td {
 
 .hiddenGiveUp {
   visibility: hidden;
+}
+
+/*Footer*/
+
+.page-footer {
+  background-color: $font-details-color;
+  color: $font-color-light;
+  font-size: 12px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.page-footer p {
+  line-height: 30px;
+  font-family: "Merriweather", Serif;
 }
