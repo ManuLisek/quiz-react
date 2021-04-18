@@ -1,0 +1,19 @@
+@import "../../styles/settings.scss";
+
+/*GiveUp*/
+.btn-end {
+  color: $color-warning;
+  border: 4px solid $color-warning;
+  box-shadow: 2px 1px #535c68;
+}
+
+.btn-end:hover {
+  color: $font-color-light;
+  background-color: $color-warning;
+  transition: $transition;
+  cursor: pointer;
+}
+
+.hiddenGiveUp {
+  visibility: hidden;
+}

@@ -1,0 +1,15 @@
+@import "../../styles/settings.scss";
+
+/*StartGame*/
+.btn-start {
+  color: $color-success;
+  border: 4px solid $color-success;
+  box-shadow: 2px 1px #535c68;
+}
+
+.btn-start:hover {
+  background-color: $color-success;
+  color: $font-color-light;
+  transition: $transition;
+  cursor: pointer;
+}

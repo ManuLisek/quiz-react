@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import PresidentsList from './PresidentsList';
-import AddPresident from './AddPresident';
-import StartGame from './StartGame';
-import Result from './Result';
-import GiveUp from './GiveUp';
-import Footer from './Footer';
+import PresidentsList from './PresidentsList/PresidentsList';
+import AddPresident from './AddPresident/AddPresident';
+import StartGame from './StartGame/StartGame';
+import Result from './Result/Result';
+import GiveUp from './GiveUp/GiveUp';
+import Footer from './Footer/Footer';
 import {presidents} from '../data/dataPresidents';
-import './styles/global.scss';
-import './App.scss';
+import '../styles/global.scss';
+
 
 class App extends Component {
     constructor(props){

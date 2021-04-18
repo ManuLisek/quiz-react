@@ -1,6 +1,8 @@
 import React from 'react';
-import {presidents} from '../data/dataPresidents';
+import {presidents} from '../../data/dataPresidents';
 import PropTypes from 'prop-types';
+import './Result.scss';
+
 
 const Result = (props) => {
     const {result} = props

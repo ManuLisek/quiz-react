@@ -1,0 +1,29 @@
+@import "../../styles/settings.scss";
+
+/*PresidentsList*/
+table {
+  text-align: center;
+  font-family: "Muli", Sans-Serif;
+  font-size: 16px;
+  border: 3px solid $font-details-color;
+  min-width: 300px;
+  width: 50vw;
+  min-height: 200px;
+  height: 45vh;
+  margin: 25px auto;
+  border-radius: $radius;
+  overflow: hidden;
+  box-shadow: 5px 3px $font-details-color;
+  border-collapse: collapse;
+  color: $font-color-light;
+}
+
+tr {
+  background-color: $background-color-dark;
+}
+
+th {
+  background-color: $font-details-color;
+  padding: 5px 0;
+  text-transform: uppercase;
+}

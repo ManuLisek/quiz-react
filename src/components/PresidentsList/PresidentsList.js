@@ -1,6 +1,7 @@
-import President from './President';
-import {presidents} from '../data/dataPresidents';
+import President from '../President/President';
+import {presidents} from '../../data/dataPresidents';
 import PropTypes from 'prop-types';
+import  './PresidentsList.scss';
 
 
 const PresidentsLists = (props) => {

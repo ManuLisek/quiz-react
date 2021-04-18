@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Clock from './Clock';
+import Clock from '../Clock/Clock';
+import './GiveUp.scss';
 
 const GiveUp = (props) => {
     const {isGiveUpVisible, clickEnd, minutes, seconds, lastSeconds} = props

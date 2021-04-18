@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './President.scss';
+
 
 const President = (props) => {
 
