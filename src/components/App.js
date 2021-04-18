@@ -6,6 +6,7 @@ import Result from './Result';
 import GiveUp from './GiveUp';
 import Footer from './Footer';
 import {presidents} from '../data/dataPresidents';
+import './styles/global.scss';
 import './App.scss';
 
 class App extends Component {

@@ -1,42 +1,4 @@
-$font-details-color: #34495e;
-$font-color-light: #dff9fb;
-$background-color-dark: #130f40;
-$background-color-light: #dff9fb;
-$color-success: #6ab04c;
-$color-warning: #e74c3c;
-$radius: 8px;
-$transition: 0.2s;
-
-/*Global*/
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  background-color: $background-color-light;
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 30px;
-  text-align: center;
-}
-
-.btn {
-  text-transform: uppercase;
-  background: white;
-  padding: 10px;
-  border-radius: $radius;
-  display: inline-block;
-  transition: $transition;
-  width: 125px;
-  margin: 10px 0;
-}
+@import "./styles/settings.scss";
 
 /*AddPresident*/
 input {
