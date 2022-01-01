@@ -2,18 +2,22 @@
 
 /*Footer*/
 
-.page-footer {
-  background-color: $font-details-color;
-  color: $font-color-light;
-  font-size: 12px;
-  height: 30px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.page {
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
-.page-footer p {
-  line-height: 30px;
-  font-family: "Merriweather", Serif;
+.footer {
+  &__description {
+    background-color: $font-details-color;
+    color: $font-color-light;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    font-family: "Merriweather", Serif;
+  }
 }

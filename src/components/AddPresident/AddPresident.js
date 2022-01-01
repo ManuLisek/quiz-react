@@ -6,8 +6,8 @@ const AddPresident = (props) => {
     const {isInputDisabled} = props;
   return (
     <div className="addPresident">
-      <h1>Odgadnij wszystkich polskich prezydentów: </h1>
-      <input type="text" placeholder="Dodaj prezydenta..." disabled={isInputDisabled} onChange={(e) => props.change(e)} />
+      <h1 className="addPresident__header">Odgadnij wszystkich polskich prezydentów: </h1>
+      <input className="addPresident__input input" type="text" placeholder="Dodaj prezydenta..." disabled={isInputDisabled} onChange={(e) => props.change(e)} />
     </div>
   );
 }

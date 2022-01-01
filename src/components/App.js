@@ -14,8 +14,8 @@ class App extends Component {
         super(props);
         this.state = {
             isPresidentVisible: false,
-            minutes: 0,
-            seconds: 20,
+            minutes: 2,
+            seconds: 0,
             result: 0,
             isInputDisabled: true,
             isQuizRunning: false,

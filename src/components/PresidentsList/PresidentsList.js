@@ -12,7 +12,7 @@ const PresidentsLists = (props) => {
     ))
 
   return (
-    <div className='presidents-list'>
+    <div className='presidentsList'>
       <table>
         <thead>
          <tr>

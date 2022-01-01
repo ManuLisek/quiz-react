@@ -10,12 +10,12 @@ table {
   width: 50vw;
   min-height: 200px;
   height: 45vh;
-  margin: 25px auto;
+  margin: 18px auto;
   border-radius: $radius;
   overflow: hidden;
   box-shadow: 5px 3px $font-details-color;
   border-collapse: collapse;
-  color: $font-color-light;
+  color: $background-color-light;
 }
 
 tr {

@@ -4,8 +4,8 @@ import './Footer.scss';
 const Footer = () => {
 
   return (
-    <footer className="page-footer">
-     <p>&copy; Michał Lisowiec. All rights reserved.</p>
+    <footer className="page__footer footer">
+     <p className="footer__description">&copy; Michał Lisowiec. All rights reserved.</p>
     </footer>
   );
 }

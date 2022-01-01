@@ -8,7 +8,7 @@ const Clock = (props) => {
 
     return(
         <div className="clock">
-          <h2>Pozostało czasu: <span className={lastSeconds ? " lastSeconds" : ""}>{minutes}:{seconds > 9 ? seconds : `0${seconds}`}</span></h2>
+          <h2>Pozostało czasu: <span className={lastSeconds ? "lastSeconds" : ""}>{minutes}:{seconds > 9 ? seconds : `0${seconds}`}</span></h2>
         </div>
       )
 }
