@@ -4,7 +4,6 @@ import AddPresident from './AddPresident/AddPresident';
 import StartGame from './StartGame/StartGame';
 import Result from './Result/Result';
 import GiveUp from './GiveUp/GiveUp';
-import Footer from './Footer/Footer';
 import {presidents} from '../data/dataPresidents';
 import '../styles/global.scss';
 
@@ -134,7 +133,6 @@ class App extends Component {
         <Result 
             result={result}
         />
-        <Footer />
       </div>
     );
   }
